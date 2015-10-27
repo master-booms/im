@@ -1,3 +1,4 @@
+include _common/_mixins
 doctype
 html
 	head
@@ -10,9 +11,9 @@ html
 		meta(name="author" content="Alexey Kulibov")
 		//favicon
 		link(rel="icon" href="/favicon.ico" type="image/x-icon")
-		link(rel="stylesheet" href="css/styles.css")
 		//fonts CSS
-		link(rel="stylesheet" href="css/fira/fira.css")
+		link(rel="stylesheet" href="css/open_sans/stylesheet.css")
+		link(link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,600italic,700italic,800,800italic' rel='stylesheet' type='text/css')
 		//vendor CSS
 		link(rel="stylesheet" href="bower/normalize-css/normalize.css")
 		//CSS
@@ -24,16 +25,93 @@ html
 		<![endif]-->
 	body
 		
+		
+		
 		<!--[if lt IE 8]>
 		p.browsehappy
 			|<strong>Ваш браузер</strong>устарел.
 			|Пожалуйста <a href="http://browsehappy.com/">обновите его</a>
 		<![endif]-->
 		//Моя верстка
-		p.class Король Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita quisquam temporibus possimus optio, aliquid. Illum exercitationem architecto dolores aliquam, molestias nisi cum sequi corrupti incidunt iste deleniti magni eum maxime?
+		.wrapper
+			header.header
+				.container
+					.page-header
+						ul.socials
+								-var socials = ['fb','vk','tw']
+								each social in socials
+									li.socials__item
+										a(href='#' class='socials__link socials__link_' + social)=social
+						.contacts-adress
+							.contacts-adress__street ул. Маяковская 6, офис 17
+						.contacts-phone
+								a(href='tel:+7(921)123-12-13' class='contacts-phone__link') + 7(921)123-12-13
+			.main-content
+				.container
+					section.logo
+						a(href='#' class='logo__link')
+							img(src='img/cooltech.png' alt='logo COOLTECH' class='logo__img')
+							span.logo__descr COOLTECH
+						form.search
+							input(type='search' name='search' class='search__input' placeholder='Что будем искать')
+							input(type='submit' name='submit' class='search__submit' value='Найти')
+						+nav('menu-right',['Карта проезда','История заказов', 'Корзина'],0)
+							
+				+nav('navigation-main',['Планшеты','Мобильные телефоны', 'Mp3 плееры','Персональные компьютеры', 'Ноутбуки', 'Аксессуары', 'Бытовая техника'],1)
+				.breadcrumbs
+					.container
+						a(href='/' class="breadcrumbs__link") Главная
+						|	>	
+						a(href='/section/' class="breadcrumbs__link breadcrumbs__link_active") Каталог
+				.container
+						h1.mobile-phone Мобильные телефоны
+						aside.sidebar
+							+nav('sidebar-menu',['Флагманы','Бюджетная линейка', ],0)
 
+							.accordeon
+								ul.accordeon__list
+									li.accordeon__item
+										a(href='#' class='accordeon__trigger') Наличие в магазинах
+										ul.accordeon__inner
+											li.accordeon__inner-item
+												.inner-item__wrap
+													input.inner-item__radio(type='radio' name='radio' value='radio-button' id='all_mag')
+													label.inner-item__descr(for='all_mag') Во всех магазинах
+												.inner-item__wrap
+													input.inner-item__radio(type='radio' name='radio' value='radio-button' id='my_mag')
+													label.inner-item__descr(for='my_mag') В ближайшем ко мне магазине
+									li.accordeon__item
+										a(href='#' class='accordeon__trigger') Бренды
+										ul.accordeon__inner
+											li.accordeon__inner-item
+												.inner-item__wrap-checked
+													input.inner-item__checkbox(type='checkbox' name='checkbox' value='checkbox' id='brands')
+													label.inner-item__descr(for='brands') Lenovo
+									li.accordeon__item
+										a(href='#' class='accordeon__trigger') Цена
+										ul.accordeon__inner
+											li.accordeon__inner-item
+												#slider
+									li.accordeon__item
+										a(href='#' class='accordeon__trigger') Цвет
+										ul.accordeon__inner
+											li.accordeon__inner-item
+												ul.colors
+													-var colors = ['white','grey','black','blue','red','yellow','pink','green','sky','purple','rose','brown']
+														each color in colors
+															li.colors__item
+																a(href='#' class='colors__link colors__link_' + color)
+									li.accordeon__item
+										a(href='#' class='accordeon__trigger') Операционная система
+										ul.accordeon__inner
+											li.accordeon__inner-item
+												.inner-item__wrap
+													input.inner-item__radio(type='radio' name='radio' value='radio-button' id='o_system')
+													label.inner-item__descr(for='o_system') Android
 
-
+						main.main-catalog 
 
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
 		script window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')
+		script(src="//code.jquery.com/ui/1.11.4/jquery-ui.js")
+		script(src="js/main.js")

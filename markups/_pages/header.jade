@@ -1,0 +1,60 @@
+include ../_common/_mixins
+
+doctype
+html
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		title Internet-Magazin
+		//SEO
+		meta(name="description" content="internet-magazin")
+		meta(name="keywords" content="internet-magazin, sales mobile, price notebook")
+		meta(name="author" content="Alexey Kulibov")
+		//favicon
+		link(rel="icon" href="/favicon.ico" type="image/x-icon")
+		link(rel="stylesheet" href="css/styles.css")
+		//fonts CSS
+		link(rel="stylesheet" href="css/fira/fira.css")
+		//vendor CSS
+		link(rel="stylesheet" href="bower/normalize-css/normalize.css")
+		//CSS
+		link(rel="stylesheet" href="css/main.css")
+		link(rel="stylesheet" href="css/styles.css")
+		//JS
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	body
+		
+		
+		
+		<!--[if lt IE 8]>
+		p.browsehappy
+			|<strong>Ваш браузер</strong>устарел.
+			|Пожалуйста <a href="http://browsehappy.com/">обновите его</a>
+		<![endif]-->
+		//Моя верстка
+		.wrapper
+			header.header
+				.container
+					.header-top
+						.socials
+							ul.socials__list
+								-var socials = ['fb','vk','tw']
+								each social in socials
+									li.socials__item
+										a(href='#' class='socials__link socials__link_' + social)=social
+						.contacts-adress
+							.contacts-adress__street ул. Маяковская 6, офис 17
+						.contacts-phone
+								a(href='tel:+7(921)123-12-13' class='contacts-phone__link') + 7(921)123-12-13
+					.header-middle
+						.logo
+							a(href='#' class='logo__link') COOLTECH
+								img(src='img/cooltech.png' alt='logo COOLTECH' class='logo__img')
+						.search
+							input(type='search' name='search' class='search__input' placeholder='Что будем искать')
+							input(type='submit' name='submit' class='search__input' value='найти')
+						+nav('menu-right',['Карта проезда','История заказов', 'Корзина'],0)
+					.header-bottom
+						+nav('navigation-main',['Планшеты','Мобильные телефоны', 'Mp3 плееры','Персональные компьютеры', 'Ноутбуки', 'Аксессуары', 'Бытовая техника'],0)

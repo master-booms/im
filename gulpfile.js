@@ -5,7 +5,7 @@ var
 	compass     = require('gulp-compass'),
 	jade        = require('gulp-jade'),
 	browserSync = require('browser-sync').create();
-	// plumber     = require('gulp-plumber');
+	plumber     = require('gulp-plumber');
 
 /* --------- paths --------- */
 
@@ -39,7 +39,7 @@ var
 
 gulp.task('jade', function() {
 	gulp.src(paths.jade.compiled)
-		
+		.pipe(plumber())
 		.pipe(jade({
 			pretty: '\t',
 		}))
@@ -50,7 +50,7 @@ gulp.task('jade', function() {
 
 gulp.task('compass', function() {
 	gulp.src(paths.scss.location)
-		
+		.pipe(plumber())
 		.pipe(compass({
 			config_file: paths.compass.configFile,
 			css: paths.compass.cssFolder,

@@ -10,9 +10,9 @@
 		<meta name="author" content="Alexey Kulibov">
 		<!--favicon-->
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="css/styles.css">
 		<!--fonts CSS-->
-		<link rel="stylesheet" href="css/fira/fira.css">
+		<link rel="stylesheet" href="css/open_sans/stylesheet.css">
+		<link link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,600italic,700italic,800,800italic" rel="stylesheet" type="text/css">
 		<!--vendor CSS-->
 		<link rel="stylesheet" href="bower/normalize-css/normalize.css">
 		<!--CSS-->
@@ -28,8 +28,140 @@
 			Пожалуйста <a href="http://browsehappy.com/">обновите его</a>
 		</p><![endif]-->
 		<!--Моя верстка-->
-		<p class="class">Король Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita quisquam temporibus possimus optio, aliquid. Illum exercitationem architecto dolores aliquam, molestias nisi cum sequi corrupti incidunt iste deleniti magni eum maxime?</p>
+		<div class="wrapper">
+			<header class="header">
+				<div class="container">
+					<div class="page-header">
+						<ul class="socials">
+							<li class="socials__item"><a href="#" class="socials__link socials__link_fb">fb</a></li>
+							<li class="socials__item"><a href="#" class="socials__link socials__link_vk">vk</a></li>
+							<li class="socials__item"><a href="#" class="socials__link socials__link_tw">tw</a></li>
+						</ul>
+						<div class="contacts-adress">
+							<div class="contacts-adress__street">ул. Маяковская 6, офис 17</div>
+						</div>
+						<div class="contacts-phone"><a href="tel:+7(921)123-12-13" class="contacts-phone__link">+ 7(921)123-12-13</a></div>
+					</div>
+				</div>
+			</header>
+			<div class="main-content">
+				<div class="container">
+					<section class="logo"><a href="#" class="logo__link"><img src="img/cooltech.png" alt="logo COOLTECH" class="logo__img"><span class="logo__descr">COOLTECH</span></a>
+						<form class="search">
+							<input type="search" name="search" placeholder="Что будем искать" class="search__input">
+							<input type="submit" name="submit" value="Найти" class="search__submit">
+						</form>
+						<nav class="menu-right">
+							<div class="container">
+								<ul class="menu-right__list">
+									<li class="menu-right__item "><a href="#" class="menu-right__link menu-right__link_active">Карта проезда</a></li>
+									<li class="menu-right__item "><a href="#" class="menu-right__link ">История заказов</a></li>
+									<li class="menu-right__item "><a href="#" class="menu-right__link ">Корзина</a></li>
+								</ul>
+							</div>
+						</nav>
+					</section>
+				</div>
+				<nav class="navigation-main">
+					<div class="container">
+						<ul class="navigation-main__list">
+							<li class="navigation-main__item "><a href="#" class="navigation-main__link ">Планшеты</a></li>
+							<li class="navigation-main__item "><a href="#" class="navigation-main__link navigation-main__link_active">Мобильные телефоны</a></li>
+							<li class="navigation-main__item "><a href="#" class="navigation-main__link ">Mp3 плееры</a></li>
+							<li class="navigation-main__item "><a href="#" class="navigation-main__link ">Персональные компьютеры</a></li>
+							<li class="navigation-main__item "><a href="#" class="navigation-main__link ">Ноутбуки</a></li>
+							<li class="navigation-main__item "><a href="#" class="navigation-main__link ">Аксессуары</a></li>
+							<li class="navigation-main__item "><a href="#" class="navigation-main__link ">Бытовая техника</a></li>
+						</ul>
+					</div>
+				</nav>
+				<div class="breadcrumbs">
+					<div class="container"><a href="/" class="breadcrumbs__link">Главная</a>	>	<a href="/section/" class="breadcrumbs__link breadcrumbs__link_active">Каталог</a></div>
+				</div>
+				<div class="container">
+					<h1 class="mobile-phone">Мобильные телефоны</h1>
+					<aside class="sidebar">
+						<nav class="sidebar-menu">
+							<div class="container">
+								<ul class="sidebar-menu__list">
+									<li class="sidebar-menu__item "><a href="#" class="sidebar-menu__link sidebar-menu__link_active">Флагманы</a></li>
+									<li class="sidebar-menu__item "><a href="#" class="sidebar-menu__link ">Бюджетная линейка</a></li>
+								</ul>
+							</div>
+						</nav>
+						<div class="accordeon">
+							<ul class="accordeon__list">
+								<li class="accordeon__item"><a href="#" class="accordeon__trigger">Наличие в магазинах</a>
+									<ul class="accordeon__inner">
+										<li class="accordeon__inner-item">
+											<div class="inner-item__wrap">
+												<input type="radio" name="radio" value="radio-button" id="all_mag" class="inner-item__radio">
+												<label for="all_mag" class="inner-item__descr">Во всех магазинах</label>
+											</div>
+											<div class="inner-item__wrap">
+												<input type="radio" name="radio" value="radio-button" id="my_mag" class="inner-item__radio">
+												<label for="my_mag" class="inner-item__descr">В ближайшем ко мне магазине</label>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="accordeon__item"><a href="#" class="accordeon__trigger">Бренды</a>
+									<ul class="accordeon__inner">
+										<li class="accordeon__inner-item">
+											<div class="inner-item__wrap-checked">
+												<input type="checkbox" name="checkbox" value="checkbox" id="brands" class="inner-item__checkbox">
+												<label for="brands" class="inner-item__descr">Lenovo</label>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="accordeon__item"><a href="#" class="accordeon__trigger">Цена</a>
+									<ul class="accordeon__inner">
+										<li class="accordeon__inner-item">
+											<div id="slider"></div>
+										</li>
+									</ul>
+								</li>
+								<li class="accordeon__item"><a href="#" class="accordeon__trigger">Цвет</a>
+									<ul class="accordeon__inner">
+										<li class="accordeon__inner-item">
+											<ul class="colors">
+												<li class="colors__item"><a href="#" class="colors__link colors__link_white"></a></li>
+												<li class="colors__item"><a href="#" class="colors__link colors__link_grey"></a></li>
+												<li class="colors__item"><a href="#" class="colors__link colors__link_black"></a></li>
+												<li class="colors__item"><a href="#" class="colors__link colors__link_blue"></a></li>
+												<li class="colors__item"><a href="#" class="colors__link colors__link_red"></a></li>
+												<li class="colors__item"><a href="#" class="colors__link colors__link_yellow"></a></li>
+												<li class="colors__item"><a href="#" class="colors__link colors__link_pink"></a></li>
+												<li class="colors__item"><a href="#" class="colors__link colors__link_green"></a></li>
+												<li class="colors__item"><a href="#" class="colors__link colors__link_sky"></a></li>
+												<li class="colors__item"><a href="#" class="colors__link colors__link_purple"></a></li>
+												<li class="colors__item"><a href="#" class="colors__link colors__link_rose"></a></li>
+												<li class="colors__item"><a href="#" class="colors__link colors__link_brown"></a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="accordeon__item"><a href="#" class="accordeon__trigger">Операционная система</a>
+									<ul class="accordeon__inner">
+										<li class="accordeon__inner-item">
+											<div class="inner-item__wrap">
+												<input type="radio" name="radio" value="radio-button" id="o_system" class="inner-item__radio">
+												<label for="o_system" class="inner-item__descr">Android</label>
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</aside>
+					<main class="main-catalog"> </main>
+				</div>
+			</div>
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>
